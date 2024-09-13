@@ -21,6 +21,7 @@ Skills & Tools
 •  Budgeting & Forecasting, Decision Analysis
 •  Data Transformation & Analysis
 •	Soft Skills: Communication, collaboration, problem-solving, critical-thinking, Analytical skills, Adaptability, Attention to detail, Curiosity, Storytelling, Teamwork, Presentation.
+
 CERTIFICATIONS
 •	Microsoft Certified PowerBI Data Analyst Associate                                                                                August 2024
 •	Tableau Business Intelligence Analyst – Tableau Software                                                                     April 2024
@@ -28,6 +29,7 @@ CERTIFICATIONS
 •	Python for Everybody Specialization – University of Michigan                                                               September 2023
 •	Excel Skills for Data Analytics and Visualization – Macquarie University                                              June 2023
 •	Google Data Analytics Certificate – Google                                                                                                April 2023
+
 OTHER PROJECTS 
 Accenture North America Data Analytics and Visualization Job Simulation on Forage - August 2024
 •	Completed a simulation focused on advising a hypothetical social media client as a Data Analyst at Accenture
