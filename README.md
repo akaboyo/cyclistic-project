@@ -198,4 +198,51 @@ bikeshare_clean <- bikeshare[!duplicated(bikeshare$ride_id),]
 
 bikeshare_clean <- na.omit(bikeshare)
 
+### Converting Date/Time stamps to Date/Time format
+bikeshare_clean$started_at <- lubridate::ymd_hms(bikeshare_clean$started_at)
+
+bikeshare_clean$ended_at <- lubridate::ymd_hms(bikeshare_clean$ended_at)
+
+## Parsing start and end hour
+bikeshare_clean$start_hour <- lubridate::hour(bikeshare_clean$started_at)
+
+bikeshare_clean$end_hour <- lubridate::hour(bikeshare_clean$ended_at)
+
+## Analyze
+
+Now all the required information are in one place and ready for exploration.
+
+#### Key tasks
+
+- [x] Aggregate your data so it’s useful and accessible.
+- [x] Organize and format your data.
+- [x] Perform calculations.
+- [x] Identify trends and relationships.
+
+#### Deliverable
+
+- [x] A summary of the analysis
+
+### Compare members and casual users
+Analyze the differences between Member and casual riders in terms of total rides taken.
+
+### Members vs Casual riders difference in respect of total rides taken
+bikeshare_clean %>% 
+
+    group_by(member_casual) %>% 
+    
+    summarise(ride_count = length(ride_id), "%" = (length(ride_id) / nrow(bikeshare_clean)) * 100)
+
+ggplot(bikeshare_clean, aes(x = member_casual, fill=member_casual)) +
+
+    geom_bar() +
+    
+    labs(x="Customer Type", y="Number Of Rides", title= " Members vs Casuals distribution")
+
+A tibble: 2 × 3
+member_casual	ride_count	%
+<chr>	<int>	<dbl>
+casual	1998889	43.39235
+member	2607658	56.60765
+
 
