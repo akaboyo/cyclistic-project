@@ -99,5 +99,103 @@ Datasets are avilable [here](https://divvy-tripdata.s3.amazonaws.com/index.html)
  
     * Main source of data provided by the [Cylistic company](https://divvy-tripdata.s3.amazonaws.com/index.html).
     
-    
+### Install and load necessary packages
+- library(tidyverse)
+- library(lubridate)
+- library(janitor)
+- library(ggmap)
+- library(geosphere)
+
+### Importing data into R studio
+ df1 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-june2021.csv")
+ 
+ df2 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-july2021.csv")
+ 
+ df3 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-aug2021.csv")
+ 
+ df4 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-sept2021.csv")
+ 
+ df5 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-oct2021.csv")
+ 
+ df6 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-nov2021.csv")
+ 
+ df7 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-dec2021.csv")
+ 
+ df8 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-jan2022.csv")
+ 
+ df9 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-feb2022.csv")
+ 
+ df10 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-march2022.csv")
+ 
+ df11 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-apr2022.csv")
+ 
+ df12 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-may2022.csv")
+
+### Combine the individual monthly datasets into one large dataframe
+bikeshare <- rbind(df1, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11, df12)
+
+## Process
+
+Cleaning and Preparation of data for analysis
+
+Key tasks
+ - Check the data for errors.
+ - Choose your tools.
+ - Transform the data so you can work with it effectively.
+ - Document the cleaning process.
+   
+Deliverable¶
+ - Documentation of any cleaning or manipulation of data
+
+### Checking the structure of the merged dataframe
+str(bikeshare)  
+
+### Checking for the number of rows and variables
+dim(bikeshare)
+
+5764741.15
+
+### Adding date, month, year, day of week columns
+bikeshare <- bikeshare %>% 
+   mutate(year = format(as.Date(started_at), "%Y")) %>% # to extract year
+   
+   mutate(month = format(as.Date(started_at), "%B")) %>% # to extract month
+   
+   mutate(date = format(as.Date(started_at), "%d")) %>% # to extract date
+   
+   mutate(day_of_week = format(as.Date(started_at), "%A")) %>% # to extract day of week
+   
+   mutate(ride_length = difftime(ended_at, started_at)) %>% 
+   
+   mutate(start_time = strftime(started_at, "%H"))
+
+  TRUE
+
+### Convert 'ride_length' to numeric format for calculation on data
+
+bikeshare <- bikeshare %>% 
+
+  mutate(ride_length = as.numeric(ride_length))
+  
+is.numeric(bikeshare$ride_length) 
+
+### Add ride distance in km
+bikeshare$ride_distance <- distGeo(matrix(c(bikeshare$start_lng, bikeshare$start_lat), ncol = 2), matrix(c(bikeshare$end_lng,
+
+bikeshare$end_lat), ncol = 2))
+
+bikeshare$ride_distance <- bikeshare$ride_distance/1000 #distance in km
+
+### Count the null values in the combined dataframe
+sum(is.na(bikeshare))
+
+3288802
+
+### Remove "bad" data where ride_length was negative or 'zero' 
+bikeshare_clean <- bikeshare[!(bikeshare$ride_length <= 0),]
+
+bikeshare_clean <- bikeshare[!duplicated(bikeshare$ride_id),]
+
+bikeshare_clean <- na.omit(bikeshare)
+
 
