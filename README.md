@@ -1,4 +1,4 @@
-# CYCLISTIC BIKESHARE CAPSTONE PROJECT
+# PROJECT 1 - CYCLISTIC BIKESHARE CAPSTONE PROJECT
 
 ## Introduction
 
@@ -18,7 +18,7 @@ For this project, the following data analysis steps were followed :
 
 ### [View Here](https://www.kaggle.com/code/adebayoadebanjo/my-google-cyclistic-capstone)
 
-# TOP 100 COMPANIES IN THE US PROJECT
+# PROJECT 2 - TOP 100 COMPANIES IN THE US PROJECT
 
 ## Overview: Web Scraping the Top 100 Companies in the US using Python
 
