@@ -16,5 +16,5 @@ For this project, the following data analysis steps were followed :
  * Share
  * Act
 
-### [View Here](https://www.kaggle.com/code/adebayoadebanjo/my-google-cyclistic-capstone)
+### [View Project Here](https://www.kaggle.com/code/adebayoadebanjo/my-google-cyclistic-capstone)
 
