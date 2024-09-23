@@ -1,7 +1,22 @@
 ![cyclistic-image](https://github.com/user-attachments/assets/48f559e5-3e92-4605-8aed-bcaa8d4100b8)
 
-
 # [CYCLISTIC BIKESHARE CAPSTONE PROJECT](#cyclistic-bikeshare-capstone-project)
+
+## Table of Contents
+[Introduction](#introduction)
+
+[Business Task](#business-task)
+
+[Data Collection](#data-collection)
+
+[Data Exploration](#data-exploration)
+
+[Data Preparation](#data-preparation)
+
+[Process](#process)
+
+[Analyse](#analyse)
+
 
 ## Introduction
 
@@ -25,7 +40,8 @@ The Cyclistic historical bike trip data includes information about bike rides ta
 - Bike type (electric or classic)
 - User type (annual member or casual rider)
   
-### Data Preparation: Data cleaning was performed to:
+## Data Preparation 
+Data cleaning was performed to:
 - Remove duplicates and missing values.
 - Ensure accurate trip times (excluding negative durations).
 - Filter out incomplete data points and null values.
