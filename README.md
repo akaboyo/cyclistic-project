@@ -61,6 +61,39 @@ I imported the follwing R packages for the analysis
 ### Combine the individual monthly datasets into one large dataframe
 bikeshare <- rbind(df1, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11, df12)
 
+### Converting Date/Time stamps to Date/Time format
+bikeshare_clean$started_at <- lubridate::ymd_hms(bikeshare_clean$started_at)
+
+bikeshare_clean$ended_at <- lubridate::ymd_hms(bikeshare_clean$ended_at)
+
+### Parsing start and end hour
+bikeshare_clean$start_hour <- lubridate::hour(bikeshare_clean$started_at)
+
+bikeshare_clean$end_hour <- lubridate::hour(bikeshare_clean$ended_at)
+
+## Analyse
+The analysis was structured around identifying behavioral differences between the two rider types:
+
+### Compare members and casual users
+Analyze the differences between Member and casual riders in terms of total rides taken.
+
+### Members vs Casual riders difference in respect of total rides taken
+bikeshare_clean %>% 
+
+    group_by(member_casual) %>% 
+    
+    summarise(ride_count = length(ride_id), "%" = (length(ride_id) / nrow(bikeshare_clean)) * 100)
+
+ggplot(bikeshare_clean, aes(x = member_casual, fill=member_casual)) +
+
+    geom_bar() +
+    
+    labs(x="Customer Type", y="Number Of Rides", title= " Members vs Casuals distribution")
+    
+
+
+
+
 
 
 ### [View Project Here](https://www.kaggle.com/code/adebayoadebanjo/my-google-cyclistic-capstone)
