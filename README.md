@@ -5,16 +5,61 @@
 This is a capstone project as a part of my [Google Data Analytics Professional Certificate](https://www.coursera.org/professional-certificates/google-data-analytics) course.
 For the analysis, I will be using R programming language and [RStudio](www.rstudio.com) IDE because it is easy for statistical analysis and data visualizations.
 
-This report aims to analyze the usage patterns of annual members and casual riders of Cyclistic, a bike-share company in Chicago. The objective is to provide insights to the marketing analyst team to design a new marketing strategy to convert casual riders into annual members. The data used for this analysis is the Cyclistic historical bike trip data.
+Cyclistic is a bike-share company offering riders flexible transportation across the city. The company’s current model allows users to rent bikes on a casual or membership basis. The goal of this project is to analyze historical trip data to understand how annual members and casual riders use Cyclistic bikes differently. The insights gained will inform strategies to convert casual riders into long-term, annual members, as this would increase profitability and retention.
 
-For this project, the following data analysis steps were followed :
+## Business Task
+The key objective is to determine how Cyclistic can increase the number of annual members by understanding usage patterns between casual riders and annual members. By identifying the differences in behavior, we can propose marketing strategies aimed at converting casual riders into annual members.
 
- * Ask
- * Prepare
- * Process
- * Analyze 
- * Share
- * Act
+## Data Collection
+The Cyclistic historical bike trip data includes information about bike rides taken by customers between 2016 and 2020. The dataset contains over 5.7 million observations and 15 variables. The variables include start and end stations, ride duration, user type, and bike id. The data was downloaded from the Cyclistic website and cleaned using Microsoft Excel and R programming language.
+
+## Data Exploration
+- Data Source: Cyclistic provides trip data from June 2021 to May 2022. The dataset includes details such as:
+- Ride ID
+- Start and end times
+- Trip duration
+- Start and end station
+- Bike type (electric or classic)
+- User type (annual member or casual rider)
+  
+### Data Preparation: Data cleaning was performed to:
+- Remove duplicates and missing values.
+- Ensure accurate trip times (excluding negative durations).
+- Filter out incomplete data points and null values.
+- Create new variables to extract time-based features (e.g., day of the week, month).
+  
+### Key Data Questions:
+- How do annual members and casual riders use Cyclistic bikes differently?
+-  Why would casual riders buy Cyclistic annual memberships?
+- How can Cyclistic use digital media to influence casual riders to become members?
+
+## Process
+The following steps were followed during the Data Processing stage :
+
+### Install and load necessary packages
+I imported the follwing R packages for the analysis
+- library(tidyverse)
+- library(lubridate)
+- library(janitor)
+- library(ggmap)
+- library(geosphere)
+
+### Import data into R studio
+- df1 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-june2021.csv")
+- df2 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-july2021.csv")
+- df3 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-aug2021.csv")
+- df4 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-sept2021.csv")
+- df5 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-oct2021.csv")
+- df6 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-nov2021.csv")
+- df7 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-dec2021.csv")
+- df8 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-jan2022.csv")
+- df9 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-feb2022.csv")
+- df10 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-march2022.csv")
+- df11 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-apr2022.csv")
+- df12 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-may2022.csv")
+
+### Combine the individual monthly datasets into one large dataframe
+bikeshare <- rbind(df1, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11, df12)
 
 ### [View Project Here](https://www.kaggle.com/code/adebayoadebanjo/my-google-cyclistic-capstone)
 
