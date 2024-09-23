@@ -108,6 +108,10 @@ ggplot(bikeshare_clean, aes(x = member_casual, fill=member_casual)) +
     geom_bar() +
     
     labs(x="Customer Type", y="Number Of Rides", title= " Members vs Casuals distribution")
+
+![chart1](https://github.com/user-attachments/assets/441fbd0f-fe0a-418b-bdcb-9c25b1466d7d)
+
+
     
 
 
