@@ -111,7 +111,7 @@ ggplot(bikeshare_clean, aes(x = member_casual, fill=member_casual)) +
 
 ![chart1](https://github.com/user-attachments/assets/441fbd0f-fe0a-418b-bdcb-9c25b1466d7d)
 
-
+From the Members vs Casuals distribution chart above, members are ~57% while casual riders are ~43% of the total riders for the twelve months under review. Members ride share is ~14% more than that of casual riders.
     
 
 
