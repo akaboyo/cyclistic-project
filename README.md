@@ -3,19 +3,19 @@
 # [CYCLISTIC BIKESHARE CAPSTONE PROJECT](#cyclistic-bikeshare-capstone-project)
 
 ## Table of Contents
-[Introduction](#introduction)
+- [Introduction](#introduction)
 
-[Business Task](#business-task)
+- [Business Task](#business-task)
 
-[Data Collection](#data-collection)
+- [Data Collection](#data-collection)
 
-[Data Exploration](#data-exploration)
+- [Data Exploration](#data-exploration)
 
-[Data Preparation](#data-preparation)
+- [Data Preparation](#data-preparation)
 
-[Process](#process)
+- [Process](#process)
 
-[Analyse](#analyse)
+- [Analyse](#analyse)
 
 
 ## Introduction
