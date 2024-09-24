@@ -16,6 +16,8 @@
 - [Process](#process)
 
 - [Analyse](#analyse)
+  
+- [Recommendation](#recommendation)
 
 
 ## Introduction
@@ -206,6 +208,15 @@ ggplot(bikeshare_clean, aes(x=rideable_type, fill=member_casual)) +
 - Electric bikes are often more expensive to rent, so the preference for classic bikes may suggest that both casual riders and members are cost-conscious, opting for cheaper transportation, especially for shorter trips.
 - This could indicate a pricing sensitivity among Cyclistic’s user base, meaning pricing strategies around electric bikes should be carefully structured to avoid alienating users.
 
+## RECOMMENDATIONS
+
+- IMPROVE USER EXPERIENCE: Offer a weekend-only membership at a discounted price other than the full annual membership subscription package.This might attract more Casual riders who use the bikes mostly for recreational activities.
+- LOYALTY PROGRMAS: Coupons and discounts could be handed out along with the annual subscription / weekend-only membership for the usage of electric bikes targeting casual riders. This may be an area of growth for Cyclistic since this bike-type is already popular among both types of riders.
+- TARGETED MARKETING CAMPAIGNS: Create marketing campaigns which can be sent via email,digital advertisement through local influncers on social media platforms like Instagram, Youtube, Tik-Tok to promote the Bikeshare and show its appeal to local residents in the docking stations, explaining why annual membership is beneficial. Campaigns should be placed during the peak months of the year.
+- Cyclistic could take advantage of the clear preference for classic bikes while also working to enhance the appeal and affordability of electric bikes. Marketing campaigns might focus on promoting the benefits of electric bikes for specific rider types (e.g., long-distance commuters or casual riders looking for a more relaxed experience) to drive up their usage without disrupting the existing demand for classic bikes.
+  
+## LIMITATION
+All ride ids are unique so we cannot conclude if the same rider takes several rides. More rider data is needed for further analysis
     
 
 
