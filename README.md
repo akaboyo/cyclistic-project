@@ -59,11 +59,16 @@ The following steps were followed during the Data Processing stage :
 
 ### Install and load necessary packages
 I imported the follwing R packages for the analysis
-- library(tidyverse)
-- library(lubridate)
-- library(janitor)
-- library(ggmap)
-- library(geosphere)
+
+library(tidyverse)
+
+library(lubridate)
+
+library(janitor)
+  
+library(ggmap)
+  
+library(geosphere)
 
 ### Import data into R studio
 df1 <- read_csv("/kaggle/input/cyclistic-bikeshare/cyclistic-data-june2021.csv")
