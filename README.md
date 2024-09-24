@@ -17,7 +17,7 @@
 
 - [Analyse](#analyse)
   
-- [Recommendation](#recommendation)
+- [Recommendations](#recommendations)
 
 
 ## Introduction
