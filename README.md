@@ -217,12 +217,4 @@ ggplot(bikeshare_clean, aes(x=rideable_type, fill=member_casual)) +
   
 ## LIMITATION
 All ride ids are unique so we cannot conclude if the same rider takes several rides. More rider data is needed for further analysis
-    
-
-
-
-
-
-
-### [View Project Here](https://www.kaggle.com/code/adebayoadebanjo/my-google-cyclistic-capstone)
 
