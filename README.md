@@ -3,13 +3,13 @@
 # [CYCLISTIC BIKESHARE PROJECT](#cyclistic-bikeshare-project)
 
 ## Table of Contents
+- [Executive Summary](#executive-summary)
+  
 - [Introduction](#introduction)
 
 - [Business Task](#business-task)
 
-- [Data Collection](#data-collection)
-
-- [Data Exploration](#data-exploration)
+- [Data Sources](#data-sources)
 
 - [Data Preparation](#data-preparation)
 
@@ -19,35 +19,42 @@
   
 - [Recommendations](#recommendations)
 
+## Executive Summary
+
+The Cyclistic Bike-Share Project is a data analysis case study focused on understanding patterns in bike usage between annual members and casual riders. Using historical ridership data spanning multiple months, the analysis merges and cleans large trip datasets, engineer key time-based features, and applies exploratory techniques to compare user behaviours across time, ride type, and usage frequency.
+
+The project answers strategic questions such as how ride frequency and duration differ between membership types, which periods of the year see the highest usage, and what behavioural trends might inform targeted marketing strategies. Visualizations in the repository — including distribution charts, trend plots, and comparative graphs — highlight clear differences in behaviour between user segments. These insights support recommendations that Cyclistic could use to tailor promotions, optimize service offerings, and ultimately increase annual memberships
 
 ## Introduction
 
-This is a capstone project as a part of my [Google Data Analytics Professional Certificate](https://www.coursera.org/professional-certificates/google-data-analytics) course.
-For the analysis, I will be using R programming language and [RStudio](www.rstudio.com) IDE because it is easy for statistical analysis and data visualizations.
-
-Cyclistic is a bike-share company offering riders flexible transportation across the city. The company’s current model allows users to rent bikes on a casual or membership basis. The goal of this project is to analyze historical trip data to understand how annual members and casual riders use Cyclistic bikes differently. The insights gained will inform strategies to convert casual riders into long-term, annual members, as this would increase profitability and retention.
+Cyclistic is a bike-sharing program where riders can use bicycles through either a casual (pay-as-you-go) model or an annual membership. Understanding how these two groups differ in their usage patterns can help Cyclistic tailor marketing, service planning, and customer retention strategies.
 
 ## Business Task
-The key objective is to determine how Cyclistic can increase the number of annual members by understanding usage patterns between casual riders and annual members. By identifying the differences in behavior, we can propose marketing strategies aimed at converting casual riders into annual members.
+The main objective of this analysis is:
 
-## Data Collection
-The Cyclistic historical bike trip data includes information about bike rides taken by customers between 2016 and 2020. The dataset contains over 5.7 million observations and 15 variables. The variables include start and end stations, ride duration, user type, and bike id. The data was downloaded from the Cyclistic website and cleaned using Microsoft Excel and R programming language.
+- To understand how *annual members* and *casual riders* use Cyclistic bikes differently.
+- To identify patterns that might explain why casual riders do not convert to annual membership.
+- To provide actionable insights and recommendations that could support marketing and service decisions.
 
-## Data Exploration
-- Data Source: Cyclistic provides trip data from June 2021 to May 2022. The dataset includes details such as:
-- Ride ID
-- Start and end times
-- Trip duration
-- Start and end station
-- Bike type (electric or classic)
-- User type (annual member or casual rider)
-  
+## Data Sources
+
+The dataset includes historical trip records with the following types of information:
+
+- Ride IDs
+- Start and end timestamps
+- Bike type
+- Rider type (member vs casual)
+- Duration and derived ride statistics
+
+Data was collected across multiple CSV files covering a 12-month period and consolidated for analysis.
+
 ## Data Preparation 
-Data cleaning was performed to:
-- Remove duplicates and missing values.
-- Ensure accurate trip times (excluding negative durations).
-- Filter out incomplete data points and null values.
-- Create new variables to extract time-based features (e.g., day of the week, month).
+Data cleaning and preparation included:
+
+- Merging multiple monthly CSV files into a single dataset.
+- Handling missing values and duplicates.
+- Ensuring date/time fields are correctly formatted.
+- Creating new features such as *ride duration*, *day of week*, *month*, and *hour of day* for deeper analysis.
   
 ### Key Data Questions:
 - How do annual members and casual riders use Cyclistic bikes differently?
@@ -234,3 +241,8 @@ ggplot(bikeshare_clean, aes(x=rideable_type, fill=member_casual)) +
 ## LIMITATION
 All ride ids are unique so we cannot conclude if the same rider takes several rides. More rider data is needed for further analysis
 
+## Technologies Used
+
+- R (for data cleaning and analysis)
+- ggplot2 and tidyverse (for visualization and manipulation)
+- Git & GitHub (for version control)
